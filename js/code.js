@@ -30,37 +30,24 @@ for(let i = 0; i < number2Elements.length; i++){
 //add onClick events for the operation elements
 //[0]=+, [1]=-, [2]=*, [3]=/, [4]=Clear
 	operationElements[0].addEventListener('click', () => {
-		//resultElement.value += numberElements[i].value;
-		if(checkInputs()){
-			number1 = number1DisplayElement.value;
-			number2 = number2DisplayElement.value;
-			let a = parseInt(number1,10);
-			let b = parseInt(number2,10);
-			resultElement.value = a+b;
-		}
+		calculateInputs('+');
 	});
 	operationElements[1].addEventListener('click', () => {
-		//resultElement.value += numberElements[i].value;
+		calculateInputs('-');
 	});
 	operationElements[2].addEventListener('click', () => {
-		//resultElement.value += numberElements[i].value;
+		calculateInputs('*');
 	});
 	operationElements[3].addEventListener('click', () => {
-		//resultElement.value += numberElements[i].value;
-		resultElement.value = result;
+		calculateInputs('/');
 	});
 	operationElements[4].addEventListener('click', () => {
-		//resultElement.value += numberElements[i].value;
 		number1DisplayElement.value = '';
 		number2DisplayElement.value = '';
 		resultElement.value = '';
 	});
 
-	operationElements[5].addEventListener('click', () => {
-		//resultElement.value += numberElements[i].value;
-		resultElement.value = result;
-	});
-
+//check if the inputs are empty, return true if both are not empty
 function checkInputs(){
 		if( number1DisplayElement.value === ''){
 			alert('number 1 empty');
@@ -73,13 +60,27 @@ function checkInputs(){
 		}
 }
 
-/*
- * main function all 
-*/
-function main(){
-	
-
+//calculate the result from the inputs
+function calculateInputs(operation){
+	if(checkInputs()){
+		number1 = number1DisplayElement.value;
+		number2 = number2DisplayElement.value;
+		let a = parseInt(number1,10);
+		let b = parseInt(number2,10);
+		
+	switch(operation){
+		case '+':
+			resultElement.value = a+b;
+			break;
+		case '-':
+			resultElement.value = a-b;
+			break;
+		case '*':
+			resultElement.value = a*b;
+			break;
+		case '/':
+			resultElement.value = a/b;
+			break;
+		}
+	}
 }
-
-
- 

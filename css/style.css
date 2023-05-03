@@ -7,16 +7,23 @@ div{
 body{
 	display: flex;
 	flex-direction: column;
-
 	justify-content: center;
 	align-items: center;
 }
 
-#pixel-grid{
-	margin: 100px;
-	width: 1000px;
+#calculator{
+	width: 400px;
 	display: flex;
-	flex-wrap: wrap; 
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+#inputs1,
+#inputs2{
+	display: flex;
+	justify-content: space-between;
 }
 
 #options{
@@ -25,6 +32,7 @@ body{
 	align-items: center;
 	gap: 15px;
 }
+
 
 
 
