@@ -84,3 +84,6 @@ function calculateInputs(operation){
 		}
 	}
 }
+
+
+
